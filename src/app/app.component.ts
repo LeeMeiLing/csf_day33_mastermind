@@ -17,6 +17,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   mindComp!:MindComponent
 
   pastGuess:Guess[] = []
+  position = ['first','second','third','fourth']
 
   ngOnInit(): void {
 
@@ -30,43 +31,45 @@ export class AppComponent implements OnInit, AfterViewInit {
     const answer = this.masterComp.toGuess
     let clue:string[]=[]
 
-    if(g.first == answer[0]){
-      clue.push('B')
-    }
-    else if(answer.includes(g.first)){
-      clue.push('W')
-    }
-
-    if(g.second == answer[1]){
-      clue.push('B')
-    }
-    else if(answer.includes(g.second)){
-      clue.push('W')
-    }
-
-    if(g.third == answer[2]){
-      clue.push('B')
-    }
-    else if(answer.includes(g.third)){
-      clue.push('W')
-    }
-
-    if(g.fourth == answer[3]){
-      clue.push('B')
-    }
-    else if(answer.includes(g.fourth)){
-      clue.push('W')
+    for(let i =0; i<4; i++){
+      if(g[this.position[i]] == answer[i]){
+        clue.push('B')
+      }else if(answer.includes(g[this.position[i]])){
+        clue.push('W')
+      }
     }
 
     g.clue = clue.toString()
-
     this.pastGuess.unshift(g)
+    console.info('>>> in check: ', g)
 
-    console.info('>>> in check: ',g)
+    // if(g['first'] == answer[0]){
+    //   clue.push('B')
+    // }
+    // else if(answer.includes(g.first)){
+    //   clue.push('W')
+    // }
 
+    // if(g.second == answer[1]){
+    //   clue.push('B')
+    // }
+    // else if(answer.includes(g.second)){
+    //   clue.push('W')
+    // }
 
+    // if(g.third == answer[2]){
+    //   clue.push('B')
+    // }
+    // else if(answer.includes(g.third)){
+    //   clue.push('W')
+    // }
 
-
+    // if(g.fourth == answer[3]){
+    //   clue.push('B')
+    // }
+    // else if(answer.includes(g.fourth)){
+    //   clue.push('W')
+    // }
 
   }
   

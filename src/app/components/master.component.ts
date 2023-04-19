@@ -23,7 +23,7 @@ export class MasterComponent implements OnInit{
   }
 
   reveal(){
-    this.hide=false
+    this.hide = !this.hide
   }
 
 

@@ -6,15 +6,6 @@
 
 <div *ngIf="pastGuess.length > 0">
     <table class="pastGuess">
-        <!-- <thead>
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th>Clue</th>
-            </tr>
-        </thead> -->
         <tr *ngFor="let g of pastGuess">
             <td>{{g.first}}</td>
             <td>{{g.second}}</td>
