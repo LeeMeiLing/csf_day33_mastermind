@@ -1,0 +1,60 @@
+<h2>Code Breaker</h2>
+
+<form [formGroup]="form" (ngSubmit)="processForm()">
+    <table>
+        <tr>
+            <td>
+                <select formControlName="first">
+                    <option value="R">Red</option>
+                    <option value="B">Blue</option>
+                    <option value="G">Green</option>
+                    <option value="Y">Yellow</option>
+                    <option value="O">Orange</option>
+                    <option value="P">Purple</option>
+                </select>
+            </td>
+            <td>
+                <select formControlName="second">
+                    <option value="R">Red</option>
+                    <option value="B">Blue</option>
+                    <option value="G">Green</option>
+                    <option value="Y">Yellow</option>
+                    <option value="O">Orange</option>
+                    <option value="P">Purple</option>
+                </select>
+            </td>
+            <td>
+                <select formControlName="third">
+                    <option value="R">Red</option>
+                    <option value="B">Blue</option>
+                    <option value="G">Green</option>
+                    <option value="Y">Yellow</option>
+                    <option value="O">Orange</option>
+                    <option value="P">Purple</option>
+                </select>
+            </td>
+            <td>
+                <select formControlName="fourth">
+                    <option value="R">Red</option>
+                    <option value="B">Blue</option>
+                    <option value="G">Green</option>
+                    <option value="Y">Yellow</option>
+                    <option value="O">Orange</option>
+                    <option value="P">Purple</option>
+                </select>
+            </td>
+            <!-- <td>
+                <span>{{pastGuess[i].clue}}</span>
+            </td> -->
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <button type="submit" [disabled]="form.invalid">Add</button>
+            </td>
+        </tr>
+    </table>
+</form>
